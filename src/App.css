@@ -20,6 +20,15 @@ li{
   cursor: pointer;
 }
 
+.checkbox{
+  cursor: pointer;
+}
+
 input:checked + span {
   text-decoration: line-through;
+}
+
+.important-icon{
+  width: 10px;
+  height: 10px;
 }
