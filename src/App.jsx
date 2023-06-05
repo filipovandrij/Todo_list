@@ -5,6 +5,9 @@ import './App.css'
 import TodoList from './components/TodoList'
 import InputField from './components/InputField'
 
+import { StyledEngineProvider } from '@mui/material/styles'
+import CssBaseline from '@mui/material/CssBaseline'
+
 function App() {
     const [text, setText] = useState('')
     const { status, error } = useSelector((state) => state.todos)
@@ -20,17 +23,20 @@ function App() {
     }, [dispatch])
 
     return (
-        <div className="App">
-            <InputField
-                text={text}
-                handleSubmit={addTask}
-                handleInput={setText}
-            />
+        <StyledEngineProvider injectFirst>
+            <CssBaseline />
+            <div className="App">
+                <InputField
+                    text={text}
+                    handleSubmit={addTask}
+                    handleInput={setText}
+                />
 
-            {status === 'loading' && <h2>Loading...</h2>}
-            {error && <h2>An error occured: {error}</h2>}
-            <TodoList />
-        </div>
+                {status === 'loading' && <h2>Loading...</h2>}
+                {error && <h2>An error occured: {error}</h2>}
+                <TodoList />
+            </div>
+        </StyledEngineProvider>
     )
 }
 

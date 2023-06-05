@@ -6,6 +6,8 @@
 
 ul{
   list-style: none;
+  padding: 0;
+
 }
 
 li{
@@ -13,6 +15,7 @@ li{
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  margin: 10px auto  ;
 }
 
 .delete{
@@ -24,11 +27,25 @@ li{
   cursor: pointer;
 }
 
-input:checked + span {
-  text-decoration: line-through;
+input:checked + .task_text {
+  background-color: rgba(11, 212, 24, 0.6);
 }
 
 .important-icon{
   width: 10px;
   height: 10px;
+}
+
+.add_form_container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input_text  input{
+  padding: 10px ;
+}
+
+.add_btn{
+  margin-left: 15px;
 }
